@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Hero from "./components/Hero";
+import Navbar from "./components/common/Navbar";
+import Buytoken from "./components/Buytoken";
+import Core from "./components/Core";
+import Exchanges from "./components/Exchanges";
+import Projectadashe from "./components/Projectadashe";
+import Smartcontract from "./components/Smartcontract";
+import "./index.css";
 
 function App() {
+  const [dark, setDark] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`2xl:px-0 px-4 ${dark ? "darkmode" : ""}`}>
+      <Navbar dark={dark} setDark={setDark} />
+      <Hero dark={dark} setDark={setDark} />
+      <Core />
+      <Exchanges />
+      <Projectadashe />
+      <Smartcontract />
+      {/* <Buytoken /> */}
     </div>
   );
 }
