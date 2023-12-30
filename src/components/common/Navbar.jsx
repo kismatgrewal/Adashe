@@ -4,6 +4,7 @@ import Logo from "../../assets/img/Logo.png";
 import DarkLogo from "../../assets/img/Darklogo.png";
 import Sidebar from "./Sidebar";
 import { useAuth0 } from "@auth0/auth0-react";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ dark, setDark }) => {
   const [side, setSide] = useState(false);
@@ -27,16 +28,17 @@ const Navbar = ({ dark, setDark }) => {
                 dark ? "darkmode" : ""
               }`}
             >
-              <a href="">
+              <Link to="about">
                 <li className=" hover:font-bold font-Montserrat text-[17px] font-medium">
                   ABOUT
                 </li>
-              </a>
-              <a href="">
+              </Link>
+              <Link to="core">
+                {" "}
                 <li className=" hover:font-bold font-Montserrat text-[17px] font-medium">
                   SERVICES
                 </li>
-              </a>
+              </Link>
               <a href="">
                 <li className=" hover:font-bold font-Montserrat text-[17px] font-medium">
                   ROADMAP

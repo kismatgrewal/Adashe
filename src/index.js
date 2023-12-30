@@ -11,13 +11,17 @@ import {
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import { Auth0Provider } from "@auth0/auth0-react";
+import Core from "./components/Core";
+import Edit from "./components/common/Edit";
+import { ToastContainer } from "react-toastify";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<App />}>
-      <Route path="hero" element={<Hero />} />
-      <Route path="navbar" element={<Navbar />} />
-    </Route>
+    <>
+      {" "}
+      <Route path="/" element={<App />} />
+      <Route path="edit/:id" element={<Edit />} />
+    </>
   )
 );
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -28,6 +32,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       redirect_uri: window.location.origin,
     }}
   >
+    <ToastContainer />
     <RouterProvider router={router} />
   </Auth0Provider>
 );
