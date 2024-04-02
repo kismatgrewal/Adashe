@@ -58,7 +58,7 @@ const Todolist = () => {
     <div className="h-screen bg-blue-300 flex items-center justify-center flex-col">
       <div className="max-w-[600px] w-full flex flex-col items-center border p-10 rounded-[12px] bg-slate-600 shadow-2xl">
         <h1 className="text-red-300 text-[64px] font-bold mb-4 ">
-          Kismat List
+          Todo List
         </h1>
         <div className="max-w-[600px] w-full flex flex-col items-center">
           <form onSubmit={handleAddTodo} className="flex mb-4">
